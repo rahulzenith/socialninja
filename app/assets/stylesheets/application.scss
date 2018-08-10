@@ -16,42 +16,93 @@
 
 body{
 	margin: 0;
+	background:#EDEAE9;
 
 	#common-header{
-		display: flex;
-		justify-content: space-around;
-		box-shadow: 1px 1px 1px 1px lightgrey;
+	    position:relative;
+	    height:60px;
+		width:100%;
+		box-shadow: 1px 2px 1px 1px white;
+		background-color:black;
+		
+       .logo{
+           position:absolute;
+           top:8px;
+           left:8%;
+       }
+       #site-name{
+           position:absolute;
+           color:white; 
+           top:-27px;
+           left:12%;
+           
+         p{  
+          font-size:40px;
+           font-family:helvetica;
+            a{
+               text-decoration:none;
+               color:white;
+
+            }
+
+         }
+
+       }
+       .auth-info-links{
+         position:absolute;
+         width:20%;
+         display:flex;
+         justify-content:space-around;
+         left:70%;
 
 
-		.logo{
-			width: 40%;
-			text-align: left;
-		}
+         .sign-up{
+              background-color:#FF6B33;
+              padding:5px;
+              border-radius:5px;
 
-		.auth-info-links{
-			width: 40%;
-			text-align: right;
+              a{
+                text-decoration:none;
+                color:white;
 
-			display: flex;
-			justify-content: flex-end;
+              }
 
-			p:first-child{
-				margin-right: 15px;
-			}
-		}
+         }
+         .sign-in{
+
+                 background-color:#FF6B33;
+              padding:5px;
+              border-radius:5px;
+
+              a{
+                 text-decoration:none;
+                color:white;
+
+              }
+
+         }
+
+         .signout{
+     
+
+              background-color:#FF6B33;
+              padding:5px;
+              border-radius:5px;
+
+              a{
+                 text-decoration:none;
+                color:white;
+         }
+       } 
+       .email{
+       color:white;
+       margin-top:22px;
+
+       }
+
+       }
+    
 
 	}
-
-
-}
-
-
-
-
-
-
-
-
-
-
+}	
 
