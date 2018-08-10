@@ -12,31 +12,9 @@
                         <% end %>
                      </div>
                      <% if user_signed_in? && post.user_id ==  current_user.id %>
-                     <p class="post-delete"><%= link_to "Delete", destroy_post_path(post.id), method: :delete, remote: true %></p>
+               <p class="post-delete"><%= link_to "Delete", destroy_post_path(post.id), method: :delete, remote: true %></p>
                      <% end %>
                   </div>
                </div>
-               <div id="comment">
-                  <h5>Add Comment</h5>
-                  <% if user_signed_in? %>
-                  <%= form_for @comment do |f| %>
-                  <%= f.hidden_field :post_id, value: post.id %>
-                  <%= f.text_area :content , value:"Comment something here.." %>
-                  <%= f.submit %>
-                  <% end %>
-                  <% end %>
-                  <ul>
-                     <% post.comments.reverse.each do |comment| %><br>
-                     <li id="comment_content">
-                        <p style="color:black;font-weight:bold;"><%= comment.content %> </p>
-                        <div>
-                           <p> by- <%= comment.user.email %></p>
-                           <% if user_signed_in? && comment.user_id ==  current_user.id %>
-                           <p><%= link_to "Delete", destroy_comment_path(comment.id), method: :delete %></p>
-                           <% end %>
-                        </div>
-                     </li>
-                     <% end %>
-                  </ul>
-               </div>
+               <%= render 'comments/post_comment', post: post %>
             </li>

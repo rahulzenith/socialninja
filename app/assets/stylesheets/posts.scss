@@ -219,7 +219,7 @@
              border-radius:10px;
              height:50px;
             }
-           input:nth-of-type(4){
+           .cmt-btn{
             width:90%;
             padding:5px;
             margin-left:5%;
@@ -238,7 +238,7 @@
        width:100%;
        padding-left:0px;
        margin-bottom:10px;
-          #comment_content{
+          .comment_content{
             display:flex;
             flex-direction:column;
             width:90%;

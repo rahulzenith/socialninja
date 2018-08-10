@@ -1,0 +1,15 @@
+        <div id="comment">
+                  <h5>Add Comment</h5>
+                  <% if user_signed_in? %>
+                  <%= form_for @comment, remote: true do |f| %>
+                  <%= f.hidden_field :post_id, value: post.id %>
+                  <%= f.text_area :content , value:"Comment something here.." %>
+                  <%= f.submit nil, :class => 'cmt-btn' %>
+                  <% end %>
+                  <% end %>
+                  <ul id="post-comment-list-<%= post.id %>">
+                     <% post.comments.reverse.each do |comment| %><br>
+                     <%= render 'comments/comment', comment: comment %>
+                     <% end %>
+                  </ul>
+               </div>
