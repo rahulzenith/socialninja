@@ -4,9 +4,8 @@
                   <p class="user-content"><%= post.content%></p>
                   <div id="delete-likes">
                      <% if user_signed_in? %>
-                     <div class="likes">
-                        <p class="like-button"><%= link_to post.like_status_string(current_user.id), toggle_like_path(post.id), method: :post %> </p>
-                        <p class="like-counter">	<%= post.likes.length %> people like this. </p>
+                     <div class="likes" id="post-<%= post.id %>-likes">
+                        <%= render 'post_like_link', post: post %>
                         <% else %>
                         <p><%= post.likes.length %> Likes </p>
                         <% end %>

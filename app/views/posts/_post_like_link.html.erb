@@ -1,0 +1,2 @@
+<p class="like-button"><%= link_to post.like_status_string(current_user.id), toggle_like_path(post.id), remote: true, method: :post %> </p>
+                        <p class="like-counter">	<%= post.likes.length %> people like this. </p>
