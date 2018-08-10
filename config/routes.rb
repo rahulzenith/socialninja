@@ -1,5 +1,8 @@
+require 'resque/server'
+
 Rails.application.routes.draw do
   
+   mount Resque::Server.new, at: "/resque"
 
   devise_for :views
   post 'likes/toggle/:post_id', to: 'likes#toggle', as: :toggle_like
