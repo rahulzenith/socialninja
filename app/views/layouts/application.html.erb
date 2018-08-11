@@ -33,6 +33,9 @@
   				<p class="sign-up"><%= link_to "Sign Up", new_user_registration_path %></p>
   			<% end %>
   		</div>
+      <% if user_signed_in? %>
+      <div> <%= link_to 'profile', profile_path(current_user.id) %></div>
+      <% end %>
   	</div>
 
 
