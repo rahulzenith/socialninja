@@ -20,10 +20,10 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   get 'users/profile/:id', to: 'users#profile' , as: :profile
-  
+
   post 'users/upload_avatar/:id', to: 'users#upload_avatar', as: :user_avatar_upload
 
-
+  delete 'users/delete/:id' , to: 'users#destroy_avatar' , as: :delete_paperclip_image
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
