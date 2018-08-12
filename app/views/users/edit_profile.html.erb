@@ -1,0 +1,15 @@
+<%= form_for @profile, url: edit_profiles_path(@profile.id) do |f| %>
+         <%= f.label :name %><br>
+         <%= f.text_field :name %><br>
+         <%= f.label :age %><br>
+         <%= f.number_field :age %><br>
+         <%= f.label :school %><br>
+         <%= f.text_field :school %><br>
+         <%= f.label :college %><br>
+         <%= f.text_field :college %><br>
+         <%= f.label :work %><br>
+         <%= f.text_field :work %><br>
+         <%= f.label :number %><br>
+         <%= f.text_field :number %><br>
+         <%= f.submit 'submit' , :class => 'btn'  %>
+<% end %>

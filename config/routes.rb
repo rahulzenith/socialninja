@@ -27,5 +27,9 @@ Rails.application.routes.draw do
 
   post 'profile/create/:id' , to: 'users#create' , as: :profiles
 
+  get 'profile/edit/:id' , to: 'users#edit_profile' , as: :profile_edit
+
+  patch 'profile/edit/:id' , to: 'users#update' , as: :edit_profiles
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
