@@ -25,5 +25,7 @@ Rails.application.routes.draw do
 
   delete 'users/delete/:id' , to: 'users#destroy_avatar' , as: :delete_paperclip_image
 
+  post 'profile/create/:id' , to: 'users#create' , as: :profiles
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
