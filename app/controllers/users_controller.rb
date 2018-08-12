@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   	@user.avatar = nil
   	@user.save
 
-  	redirect_to profile_path
+  	redirect_to profile_path(current_user.id)
 
 
   end	
