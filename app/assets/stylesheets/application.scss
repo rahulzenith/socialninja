@@ -20,7 +20,7 @@ body{
 
 	#common-header{
 	    position:relative;
-	    height:60px;
+	    height:8vh;
 		width:100%;
 		box-shadow: 1px 2px 1px 1px white;
 		background-color:black;
@@ -105,10 +105,102 @@ body{
 
 	}
 }	
+
+#sign_in_page{
+width:100%;
+position:relative;
+height:92vh;
+background:white;
+#log_in_text{
+margin:0;
+}
+#sign_in_image {
+position:absolute;
+left:55%;
+top:80px;
+img{
+  height:400px;
+  width:400px;
+}
+
+}
+#log_in_text{
+float:left;
+position:relative;
+top:80px;
+left:10%;
+span{
+color:#041A9A;
+font-size:70px;
+cursor:pointer;
+transition:text-shadow 200ms ease-in-out;
+}
+
+}
+#log_in_text span:hover{
+text-shadow:0 0 5px blue;
+} 
+#sign_in_form{
+position:absolute;
+top:200px;
+left:10%;
+width:300px;
+.field-2{
+margin-top:20px;
+
+}
+.common-label{
+margin-top:5px;
+font-weight:bold;
+}
+.sign_in_fields{
+width:80%;
+padding:5px;
+border-radius:5px;
+
+}
+.actions{
+margin-top:20px;
+.login_submit_button{
+width:85%;
+cursor:pointer;
+padding:8px;
+background:black;
+color:white;
+border:0px;
+border-radius:20px;
+
+}
+}
+.forgot_password{
+text-decoration:none;
+color:#808082;
+position:relative;
+top:5px;
+}
+.confirmation_link{
+text-decoration:none;
+color:#808082;
+position:relative;
+top:10px;
+}
+}
+#fb-login{
+position:absolute;
+top:430px;
+left:20%;
+img{
+width:130px;
+height:28px;
+}
+}
+#g-auth{
+position:absolute;
+left:10%;
+top:430px;
 #google-auth{
-width:200px;
+width:130px;
+}
 
-
-
-
+}
 }
