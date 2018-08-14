@@ -11,6 +11,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
   </head>
 
   <body>
@@ -24,6 +26,8 @@
 
   		<div class='auth-info-links'>
   			<% if user_signed_in? %>
+       <div id="home_avatar"> <%= link_to image_tag( current_user.avatar , class: "home_avatar"),profile_path(current_user.id) %> </div>
+        <!-- <img height="40" width="40" src="<%= current_user.avatar %>"> -->
   			<p class="email"><%= current_user.email %></p>
   			<p class="signout"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
 
@@ -33,9 +37,6 @@
   				<p class="sign-up"><%= link_to "Sign Up", new_user_registration_path %></p>
   			<% end %>
   		</div>
-      <% if user_signed_in? %>
-      <div> <%= link_to 'profile', profile_path(current_user.id) %></div>
-      <% end %>
   	</div>
 
 

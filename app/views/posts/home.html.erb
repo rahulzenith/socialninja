@@ -24,6 +24,29 @@
    <div id="friends">
       <div id="friend">
          <p>Friends</p>
+         <input id="user-search" type="text" placeholder="Search...">
       </div>
+
    </div>
+   <script type="text/javascript">
+   {
+      var users = <%= "#{@all_users}".html_safe %>;
+
+      var user_ids = <%= "#{@user_ids}".html_safe %>;
+
+       $( "#user-search" ).autocomplete({
+            source: users,
+            select: function( event, ui ) {
+                console.log(event);
+                console.log(ui.item);
+                $( "#user-search" ).val(ui.item.value);
+                console.log(user_ids[users.indexOf(ui.item.value)]);
+               // console.log(user_ids[]);
+               
+               window.location = '/users/profile/' + user_ids[users.indexOf(ui.item.value)];
+            }
+          });
+
+   }
+</script>
 </main>
