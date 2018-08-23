@@ -39,6 +39,24 @@ class UsersController < ApplicationController
   end  
 
   end 
+  def search
+    term = params[:term]
+
+    users = User.where('email like ?', "%#{term}%")
+
+    data = []
+    users.each do |u|
+      data << {
+        id: u.id,
+        label: u.email,
+        value: u.email
+      }
+    end
+
+    return render json: data, status: 200
+
+
+  end
   def update
   @profile = Profile.find(params[:id])
  @profile = Profile.update(name: params[:profile][:name], number: params[:profile][:number],college: params[:profile][:college],school: params[:profile][:school],user_id: current_user.id, age: params[:profile][:age], work: params[:profile][:work])

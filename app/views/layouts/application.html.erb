@@ -6,13 +6,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application' ,  'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script><!-- 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script> -->
   </head>
 
   <body>
@@ -28,7 +29,7 @@
   			<% if user_signed_in? %>
        <div id="home_avatar"> <%= link_to image_tag( current_user.avatar , class: "home_avatar"),profile_path(current_user.id) %> </div>
         <!-- <img height="40" width="40" src="<%= current_user.avatar %>"> -->
-  			<p class="email"><%= current_user.email %></p>
+  			<p id="current_user_email" class="email"><%= current_user.email %></p>
   			<p class="signout"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
 
   			<% else %>
@@ -38,10 +39,32 @@
   			<% end %>
   		</div>
   	</div>
-
-
+     
 
     <%= yield %>
+      <% if user_signed_in? %>
+      <div id="user-chat-box">
+        <ul id="chat-messages-list">
+          <li class="other-message">
+            <span>Other Message</span>
+          </li>
+          <li class="self-message">
+            <span>
+              Self Message
+            </span>
+            
+          </li>
+
+        </ul>
+        <div id="chat-message-input-container">
+          <input id="chat-message-input" placeholder="Type message here">
+          <button id="send-message"><i class="fa fa-thumbs-up"></i></button>
+        </div>
+
+      </div>
+    <% end %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
               new WOW().init();

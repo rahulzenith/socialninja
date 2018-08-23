@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   delete 'comments/:id', to: 'comments#destroy', as: :destroy_comment
 
 	# Post routes
-  root 'posts#home' , as: :root
+  root 'posts#home' 
+  get 'posts/home' , to:'posts#home', as: :home
   post 'posts/create', as: :posts
   delete 'posts/:id', to: 'posts#destroy', as: :destroy_post
 
@@ -30,6 +31,9 @@ Rails.application.routes.draw do
   get 'profile/edit/:id' , to: 'users#edit_profile' , as: :profile_edit
 
   patch 'profile/edit/:id' , to: 'users#update' , as: :edit_profiles
+
+  get 'users/search', to: 'users#search'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
