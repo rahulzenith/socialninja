@@ -10,7 +10,7 @@
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6nRFMtXvOs19iYARZIqpVnoZnGHaSW6tDjLAFT9TCbQolUQFe">
   <% end %>
 </div>
- <% if @user.avatar.blank? %>
+ <% if @user.avatar.blank? && @user.id == current_user.id %>
  <%= form_for @user, url: user_avatar_upload_path(@user.id), html: { multipart: true }, method: :post do |form| %>
   <%= form.file_field :avatar %>
   <%= form.submit %>
