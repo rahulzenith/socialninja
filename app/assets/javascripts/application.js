@@ -12,9 +12,7 @@
 //
 //= require rails-ujs
 //= require jquery
-//= require jquery-ui
-//= require turbolinks
-//= require_tree .
+//= require_tree 
 
 
 window.addEventListener('load', function(){
@@ -102,10 +100,23 @@ window.addEventListener('load', function(){
 
    x.style.display = "block";
    y.style.display = "flex";
+
+
    });
-
-
+  
+// $( "#user-search" ).autocomplete({
+//             source: '/users/search',
+//             minLength: 2,
+//             select: function( event, ui ) {
+                
+//                // console.log(user_ids[]);
+//                console.log(ui.item);
+//                window.location = '/users/profile/' + ui.item.id;
+//             }
+//           });
 
 });
 
+
+   
 

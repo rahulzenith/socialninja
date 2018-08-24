@@ -28,6 +28,22 @@
       </div>
 
    </div>
+
+      <script type="text/javascript">
+   {
+   
+       $( "#user-search" ).autocomplete({
+            source: '/users/search',
+            minLength: 2,
+            select: function( event, ui ) {
+                
+               // console.log(user_ids[]);
+               console.log(ui.item);
+               window.location = '/users/profile/' + ui.item.id;
+            }
+          });
+   }
+  </script>
     
 
 </main>
