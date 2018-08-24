@@ -70,7 +70,7 @@ class UsersController < ApplicationController
 
   def authorize_user
   if (@user.id != current_user.id)
-  redirect_to action: "home"
+  redirect_to action: "profile"
   end
   end
 end
