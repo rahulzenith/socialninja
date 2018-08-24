@@ -44,6 +44,12 @@
     <%= yield %>
       <% if user_signed_in? %>
       <div id="user-chat-box">
+        <div id="user-chat-box-header">
+           <div id="minimize-icon"> 
+            <i id="maximize" class="fa fa-plus-square"></i>
+            <i id="minimize" class="fa fa-minus-square"></i>  
+ </div>
+        </div>
         <ul id="chat-messages-list">
           <li class="other-message">
             <span>Other Message</span>

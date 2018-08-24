@@ -32,7 +32,7 @@ window.addEventListener('load', function(){
 				    text: data.user_email + ' joined!',
 				    theme: 'relax',
 				    type: 'success',
-				    layout: 'topLeft',
+				    layout: 'bottomLeft',
 				    timeout: 1000
 				}).show();
 			});
@@ -71,6 +71,41 @@ window.addEventListener('load', function(){
  			});
  		});
 	}
+   var xyz =document.getElementById("minimize");
+   var abc =document.getElementById("maximize");
+
+   xyz.addEventListener('click',function(){
+
+   var x = document.getElementById("chat-messages-list");
+   var y = document.getElementById("chat-message-input-container");
+
+   x.style.display = "none";
+   y.style.display = "none";
+
+   var z = document.getElementById("user-chat-box");
+
+   z.style.height = "28px";
+
+   var h = document.getElementById("user-chat-box-header");
+
+   h.style.height = "100%";
+   });
+
+   abc.addEventListener('click' , function(){
+   var x = document.getElementById("chat-messages-list");
+   var y = document.getElementById("chat-message-input-container");
+   var z = document.getElementById("user-chat-box");
+   var h = document.getElementById("user-chat-box-header");
+
+   z.style.height = "350px";
+   h.style.height = "8%";
+
+   x.style.display = "block";
+   y.style.display = "flex";
+   });
+
+
+
 });
 
 

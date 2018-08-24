@@ -219,17 +219,36 @@ width:130px;
 }
 #user-chat-box{
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
     right: 10px;
-    border: 1px dashed grey;
+    border: 1px solid grey;
     height: 350px;
     width: 300px;
     background-color: white;
+    
+    #user-chat-box-header{
+    width:100%;
+    height:8%;
+    background:#011386;
+    #minimize-icon{
+    position:absolute;
+    right:5px;
+    top:5px;
 
+    i{
+    cursor:pointer;
+    color:white;
+    }
+
+  }
+
+
+    }
     #chat-messages-list{
       list-style: none;
+      margin:0px;
       padding: 10px;
-      height: 70%;
+      height: 75%;
       background-color: white;
       overflow: auto;
 
@@ -259,23 +278,34 @@ width:130px;
 
     }
     #chat-message-input-container{
-          height: 30%;
+        height:11.29%;
         width: 100%;
-        display: flex;
-        flex-direction: row;
+        display:flex;
+        flex-direction:row;
+        
 
         #chat-message-input{
-            height: 50%;
+          height:100%;
           width: 70%;
+          padding:0;
+          margin-top:0px;
         }
 
         #send-message{
-            height: 50%;
+          height:100%;
           width: 30%;
           font-size: 25px;
           color: white;
           border: none;
-          background: #58d258;
+          background:grey;
+          cursor:pointer;
+          padding:0;
+
+          i{
+           margin-top:5px;
+           color:white;
+          }
+          
         }
       }
 }
