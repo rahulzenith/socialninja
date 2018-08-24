@@ -3,7 +3,13 @@
  <p><%= @user.email %></p>
 
  
- <div id="profile-pic"><img  src="<%= @user.avatar %>"></div>
+ <div id="profile-pic">
+  <% if !@user.avatar.blank? %>
+  <img  src="<%= @user.avatar %>">
+  <% else %>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6nRFMtXvOs19iYARZIqpVnoZnGHaSW6tDjLAFT9TCbQolUQFe">
+  <% end %>
+</div>
  <% if @user.avatar.blank? %>
  <%= form_for @user, url: user_avatar_upload_path(@user.id), html: { multipart: true }, method: :post do |form| %>
   <%= form.file_field :avatar %>

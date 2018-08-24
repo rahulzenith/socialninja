@@ -26,7 +26,13 @@
 
   		<div class='auth-info-links'>
   			<% if user_signed_in? %>
-       <div id="home_avatar"> <%= link_to image_tag( current_user.avatar , class: "home_avatar"),profile_path(current_user.id) %> </div>
+       <div id="home_avatar"> 
+        <% if !current_user.avatar.blank? %>
+        <%= link_to image_tag( current_user.avatar , class: "home_avatar"),profile_path(current_user.id) %>
+       <% else %>
+        <%= link_to image_tag( "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6nRFMtXvOs19iYARZIqpVnoZnGHaSW6tDjLAFT9TCbQolUQFe" , class: "home_avatar"),profile_path(current_user.id) %> 
+        <% end %>
+         </div>
         <!-- <img height="40" width="40" src="<%= current_user.avatar %>"> -->
   			<p id="current_user_email" class="email"><%= current_user.email %></p>
   			<p class="signout"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
