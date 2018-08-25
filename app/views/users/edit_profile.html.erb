@@ -3,6 +3,11 @@
          <%= f.text_field :name %><br>
          <%= f.label :age %><br>
          <%= f.number_field :age %><br>
+         <%= f.label :gender %><br>
+         <%= f.radio_button :gender, 'Male' %> 
+         <%= f.label :gender, 'Male', :value => 'Male' %><br>
+         <%= f.radio_button :gender, 'Female' %>
+         <%= f.label :gender, 'Female', :value => 'Female' %><br>
          <%= f.label :school %><br>
          <%= f.text_field :school %><br>
          <%= f.label :college %><br>

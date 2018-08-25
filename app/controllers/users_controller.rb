@@ -26,7 +26,8 @@ class UsersController < ApplicationController
 
   end	
   def create
-    @profile = Profile.create(name: params[:profile][:name], number: params[:profile][:number],college: params[:profile][:college],school: params[:profile][:school],user_id: current_user.id, age: params[:profile][:age], work: params[:profile][:work])
+  
+    @profile = Profile.create(name: params[:profile][:name], number: params[:profile][:number], gender: params[:profile][:gender],college: params[:profile][:college],school: params[:profile][:school],user_id: current_user.id, age: params[:profile][:age], work: params[:profile][:work])
     
     redirect_to profile_path(current_user.id)    
 
@@ -59,8 +60,8 @@ class UsersController < ApplicationController
   end
   def update
   @profile = Profile.find(params[:id])
- @profile = Profile.update(name: params[:profile][:name], number: params[:profile][:number],college: params[:profile][:college],school: params[:profile][:school],user_id: current_user.id, age: params[:profile][:age], work: params[:profile][:work])
- redirect_to profile_path(current_user.id)
+  @profile = Profile.update(name: params[:profile][:name], number: params[:profile][:number], gender: params[:profile][:gender],college: params[:profile][:college],school: params[:profile][:school],user_id: current_user.id, age: params[:profile][:age], work: params[:profile][:work])
+  redirect_to profile_path(current_user.id)
   end 
   private
 
